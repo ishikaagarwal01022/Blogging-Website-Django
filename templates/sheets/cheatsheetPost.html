@@ -1,0 +1,123 @@
+{% extends 'layout.html' %}
+
+{% block title %} | {{post.title}} {% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/css/cheatsheetPost.css">
+{% endblock %}
+
+{% block js %}{% endblock js %}
+
+{% block body %}
+{% load humanize %}
+{% load extras %}
+
+<!-- Cheatsheet Content -->
+<div class="content-container">
+
+    <div class="content-heading">
+        <p class="post-content-heading">{{post.title}}</p>
+
+        <div class="media-links">
+                    <div class="media-items"><a href="/facebook"><img src="/static/img/facebook.png" alt="" class="social-media-items"></a></div>
+                    <div class="media-items"><a href="/instagram"><img src="/static/img/instagram.png" alt="" class="social-media-items"></a></div>
+                    <div class="media-items"><a href="/twitter"><img src="/static/img/twitter.png" alt="" class="social-media-items"></a></div>
+        </div><hr class="hline">
+
+    </div>
+
+    <div class="content-para">
+        <p>{{post.content|safe}}</p>
+    </div>
+</div>
+<hr class="hline">
+
+<!-- Cheatsheet Content End -->
+
+
+<!-- Comment area -->
+
+<div class="comment-container">
+    <div class="comment-heading">
+        <h2>Post a Comment</h2>
+    </div>
+    <div class="form-commment-container">
+
+        {% if user.is_authenticated %}
+
+        <form action="/sheets/postcomment" method="post" id="comment-form">
+            {% csrf_token %}
+            <textarea type="text" name="comment" id="comment" class="comment-input" placeholder="Add a Comment"
+                rows="4"></textarea>
+            <input type="hidden" name="postSno" value="{{post.sno}}">
+            <input type="hidden" name="parentSno" value="">
+            <button type="submit" class="submit-btn">Post</button>
+
+        </form>
+
+        {% else %}
+        <p class="login-line">Login to post a comment <button class="submit-btn"><a href="/login" class="login-btn-link">Login</a></button></p>
+        {% endif %}
+
+        <div class="comment-heading">
+            <h2>Comments ({{comments.count}})</h2>
+        </div>
+
+
+        {% for comment in comments %}
+        <div class="posted-comment">
+            <div class="commented-area-user">
+                <div class="img-post">
+                    <img src="/static/img/user.png" alt="user" class="comment-img">
+                </div>
+                <div class="user-area">
+                    <div class="comments-area-username">{{comment.user.username}} <span
+                            id="comment-timestamp">{{comment.timestamp|naturaltime}}</span>
+                    </div>
+                    <div class="user-posted-comment">{{comment.comment}}</div>
+
+
+                    <div class="reply-area">
+
+                        {% if user.is_authenticated %}
+                        <form action="/sheets/postcomment" method="post">
+                            {% csrf_token %}
+                            <div class="reply">
+                                <textarea type="text" name="comment" id="comment" placeholder="Add a Reply"
+                                    class="comment-input reply-cont"></textarea>
+                                <input type="hidden" name="parentSno" value="{{comment.sno}}">
+                            </div>
+                            <input type="hidden" name="postSno" value="{{post.sno}}">
+                            <button type="submit" class="submit-btn">Reply</button>
+
+                        </form>
+                        {% endif %}
+
+
+
+                        <div class="replies">
+                            {% for reply in repDict|get_val:comment.sno %}
+                            <div class="user-replies-area">
+                                <div class="img-post">
+                                    <img src="/static/img/user.png" alt="user" class="comment-img">
+                                </div>
+                                <div class="user-area">
+                                    <div class="comments-area-username">{{reply.user.username}}</div>
+                                    <div class="comment-reply">{{reply.comment}}</div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+            {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

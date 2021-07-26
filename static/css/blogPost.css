@@ -1,0 +1,273 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.hline{
+    color: rgb(26, 26, 92);
+}
+
+.content-container, .hline{
+    
+    width: 65vw;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1.5rem;
+}
+
+.content-heading{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 1rem 1rem;
+    padding-bottom: 2rem;
+}
+
+.post-content-heading{
+    color: rgb(26, 26, 92);
+}
+
+.content-para{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    /* text-align: center; */
+    font-size: 1.3rem;
+    padding: 2rem 2.5rem;
+    line-height: 1.6;
+}
+
+.content-para h1, h2, h3, h4, b, span,strong{
+    color: rgb(26, 26, 92);
+}
+
+.content-para img{
+    width: 800px;
+    height: 500px;
+}
+/* .content-para-area h1, h2, h3, h4, b, span{
+
+    color: rgb(26, 26, 92);
+} */
+
+
+.comment-container{
+    width: 65vw;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1.5rem;
+}
+
+.comment-heading{
+    font-size: 1.5rem;
+    padding: 2rem 0;
+}
+
+/* .form-commment-container{
+    background-color: aqua;
+} */
+
+#comment-form{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.comment-input{
+    display: block;
+    width: 50vw;
+    font-size: 1.1rem;
+    padding: 0.8rem 0.8rem;
+    margin-bottom: 1rem;
+    border: 3px solid rgb(26, 26, 92);
+    border-radius: 9px;
+}
+
+.submit-btn{
+    font-size: 1.5rem;
+    padding: 0.5rem 1.2rem;
+    background-color: rgb(26, 26, 92);
+    color: white;
+    margin: 1rem 0;
+}
+
+/* .posted-comment{
+    background-color: red;
+} */
+
+.commented-area-user{
+    display: flex;
+    /* background-color: aqua; */
+    margin: 1rem 0;
+    border: 2px solid rgb(26, 26, 92);
+    border-radius: 7px;
+}
+
+.img-post{
+    display: block;
+    margin: 0.2rem 1rem;
+}
+
+.comment-img{
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.user-area{
+    display: block;
+    margin: 0.8rem 1.5rem;
+}
+
+.comments-area-username{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+#comment-timestamp{
+    font-size: 0.9rem;
+    background-color: rgb(26, 26, 92);
+    color: white;
+    font-weight: normal;
+    padding: 0.18rem 0.6rem;
+    border-radius: 5px;
+    margin-left: 0.3rem;
+}
+
+.user-posted-comment, .comment-reply{
+    font-size: 1.4rem;
+    padding: 0.2rem 0;
+}
+
+.reply-area{
+    margin: 1.5rem 0;
+    margin-bottom: 0;
+}
+
+.user-replies-area{
+    display: flex;
+    /* background-color: yellowgreen; */
+    margin-bottom: 4px;
+}
+
+
+/* .media-links-post{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.media-items-post{    
+    padding: 20px 20px;
+} */
+
+.post-content-heading{
+    margin: 1rem 0;
+}
+
+.login-line{
+    font-size: 1.5rem;
+}
+
+.login-btn-link{
+    color: white;
+    text-decoration: none;
+} 
+
+@media screen and (max-width: 1150px){
+    .reply-cont{
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 730px){
+    .content-container, .comment-container{
+        width: 95vw;
+        /* margin: 0; */
+        padding: 0 0.5rem;
+    }
+
+    .post-content-heading{
+        font-size: 1.8rem;
+        /* margin: 0; */
+        padding: 0 0.5rem;
+
+    }
+
+    .content-para{
+        font-size: 1.1rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .img-post{
+        margin-top: 1.5rem;
+        margin-right: 0.5rem;
+        
+    }
+    
+    .comment-img{
+        width: 20px;
+        height: 20px;
+    }
+
+    .user-area{
+        margin-left: 0.5rem;
+    }
+
+    .comment-heading{
+        font-size: 0.8rem;
+    }
+
+    .comment-input{
+        width: 80vw;
+    }
+
+    .reply-cont{
+        width: 55vw;
+    }
+
+    .submit-btn{
+        font-size: 1.1rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .comments-area-username, .user-posted-comment, .comment-reply{
+        font-size: 1.2rem;
+    }
+    
+    .comment-input{
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width:1400px) {
+    .content-para img{
+        width: 500px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width:960px) {
+    .content-para img{
+        width: 400px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width:460px) {
+    .content-para img{
+        width: 250px;
+        height: 150px;
+    }
+}
+
+

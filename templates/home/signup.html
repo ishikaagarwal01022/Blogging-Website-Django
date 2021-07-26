@@ -1,0 +1,65 @@
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chetbo | SignUp</title>
+    <link rel="stylesheet" href="/static/css/signup.css">
+</head>
+
+<body>
+
+    <div class="signup-form-container">
+        <form method="POST" onsubmit="return signupvalidation()" action="/handlesignup" name="signup-form">
+        {% csrf_token %}
+            <div class="para-heading">Welcome to Chetbo</div>
+            <hr>
+            <div class="form-grp">
+            <a href="{% provider_login_url 'google' %}">SignUp With Google</a>
+            </div>
+            <div class="or-div">or</div>
+            <div class="form-grp">
+                <label for="username">Username: </label>
+                <input type="text" name="username" id="username">
+            </div>
+            <div class="form-grp">
+                <label for="fname">First Name: </label>
+                <input type="text" name="fname" id="fname">
+            </div>
+            <div class="form-grp">
+                <label for="lname">Last Name: </label>
+                <input type="text" name="lname" id="lname">
+            </div>
+            <div class="form-grp">
+                <label for="email">Email Address: </label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="form-grp">
+                <label for="pass1">Choose a Password: </label>
+                <input type="password" name="pass1" id="pass1">
+            </div>
+            <div class="form-grp">
+                <label for="pass2">Retype Password: </label>
+                <input type="password" name="pass2" id="pass2">
+            </div>
+
+             <div class="login-btn">
+
+                <button type="submit" id="login-btn">SignUp</button>
+            </div>
+
+        </form>
+
+
+        <p class="home-para">Already a User <a href="/login" class="home-link">Login here</a></p>
+        <p class="home-para">Go Back to <a href="/" class="home-link">Home</a></p>
+    </div>
+
+    <script src="/static/js/signup.js"></script>
+</body>
+
+</html>

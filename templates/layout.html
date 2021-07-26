@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chetbo {% block title %} {% endblock %}</title>
+    <link rel="shortcut icon" href="/static/img/FAVicon.png" type="image/png">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
+    {% block head %} {% endblock %}
+{% block js %}{% endblock js %}
+
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="/static/img/chetbologo.png" alt="natureimages.com">
+        </div>
+
+        <input type="checkbox" id="opensidebarmenu" hidden>
+        <label for="opensidebarmenu" class="sidebaricontoggle">
+
+            <div class="spinner top"></div>
+            <div class="spinner middle"></div>
+            <div class="spinner bottom"></div>
+        </label>
+        <div class="sidebarmenu">
+
+            <ul id="nav-items">
+                <li class="item"><a href="/" class="nav-link">Home</a></li>
+                <li class="item"><a href="/about" class="nav-link">About</a></li>
+                <li class="item"><a href="/blogspage" class="nav-link">Blog</a></li>
+                <li class="item"><a href="/sheets" class="nav-link">Cheatsheets</a></li>
+                <li class="item"><a href="/contact" class="nav-link">Contact Me</a></li>
+
+                {% if user.is_authenticated %}
+                <li class="item"><a href="/" class="nav-link"><strong>{{request.user}}</strong></a></li>
+                <li class="item"><a href="/handlelogout" class="nav-link">Logout</a></li>
+                {% else %}
+                <li class="item"><a href="/signup" class="nav-link"><strong>Sign Up</strong></a></li>
+                <li class="item"><a href="/login" class="nav-link"><strong>Login</strong></a></li>
+
+                
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    {% block body %} {% endblock %}
+
+    <footer>
+        <div class="footer">
+            <div class="copyright">
+                <p class="footer-para">
+                    Copyright &copy; 2021 | www.chetbo.com
+                </p>
+
+
+                <div class="media-links">
+                    <div class="media-items"><a href="/facebook"><img src="/static/img/facebook.png" alt="" class="social-media-items"></a></div>
+                    <div class="media-items"><a href="/instagram"><img src="/static/img/instagram.png" alt="" class="social-media-items"></a></div>
+                    <div class="media-items"><a href="/twitter"><img src="/static/img/twitter.png" alt="" class="social-media-items"></a></div>
+                </div>
+
+                <div class="mail">
+
+                <div class="mail-img"><img src="/static/img/mailnew.png" alt="" class="social-media-items"> </div>
+                    <div class="mail-address">chetbo@gmail.com</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

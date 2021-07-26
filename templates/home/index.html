@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/style.css"> {% endblock %}
+
+{% block title %}| Home {% endblock %}
+
+
+{% block body %}
+<div class="head-container">
+
+
+    <div class="bg-color">
+        <h2 class="head-container-heading">Blog with Cheatsheet For You!</h2>
+        <p class="head-container-para">Don’t know where or how to begin, then Chetbo is here for you.</p>
+
+        <button class="browse-btn"><a href="/sheets" class="browse-btn-link">Browse Cheatsheets</a></button>
+    </div>
+
+    <div class="img-section">
+        <img src="/static/img/home.png" alt="">
+    </div>
+</div>
+
+<div class="home-items">
+
+    <div class="home-items-num">
+
+        <img src="/static/img/home1.png" alt="" class="home-item-img">
+        <div class="home-items-num-content">Got Stucked?</div>
+
+
+    </div>
+    <div class="home-items-num">
+
+        <img src="/static/img/home2.png" alt="" class="home-item-img">
+        <div class="home-items-num-content">Search Chetbo.com</div>
+
+    </div>
+
+    <div class="home-items-num">
+
+        <img src="/static/img/home3.png" alt="" class="home-item-img">
+        <div class="home-items-num-content">Problem Solved!</div>
+
+    </div>
+
+
+</div>
+
+<div id="main-container">
+    <div id="main-container-part">
+        <div class="content">
+            At <strong> Chetbo </strong>I believe that anyone can succeed online with the right toolset. The website is
+            for
+            visitors who seek information on how to get started online, grow their businesses or personal brands and how
+            to
+            succed in our life. In this I will provide you the best guides towards your path.
+
+        </div>
+
+        <div class="browse-cheatsheet-btn">
+            <button class="browse-btn"><a href="/blogspage" class="browse-btn-link">Browse Blog</a></button>
+            <button class="browse-btn"><a href="/sheets" class="browse-btn-link">Browse Cheatsheets</a></button>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="must-read-container">
+
+    <div class="must-read-heading">Must Read Cheatsheets</div>
+
+    <div class="must-read-cheatsheets-container">
+        <a href="blog/first-post" class="must-read-link-area"><div class="title-area">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, minima?
+        </div></a><hr>
+        <a href="blog/first-post" class="must-read-link-area"><div class="title-area">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, minima?
+        </div></a><hr>
+        <a href="blog/first-post" class="must-read-link-area"><div class="title-area">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, minima?
+        </div></a><hr>
+        <a href="blog/first-post" class="must-read-link-area"><div class="title-area">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, minima?
+        </div></a><hr>
+        <a href="blog/first-post" class="must-read-link-area"><div class="title-area">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, minima?
+        </div></a><hr>
+        <a href="blog/first-post" class="must-read-link-area"><div class="title-area">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, minima?
+        </div></a><hr>
+        
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+{% endblock %}

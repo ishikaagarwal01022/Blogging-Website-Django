@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block title %}| Cheatsheet {% endblock %}
+{% block head %}
+<link type="text/css" rel="stylesheet" href="/static/css/sheets.css"> {% endblock %}
+
+{% block body %}
+<header>
+    <div class="search-area">
+
+        <div class="search-area-heading">
+            <h1>Cheatsheets</h1>
+        </div>
+
+        <div class="search-bar">
+            <form action="sheets/sheetsearch" method="get">
+                <input type="search" name="query" id="search" placeholder="Search Cheatsheet here">
+                <button name="sheetsearch" id="search-btn" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</header>
+
+{% for post in page_obj %}
+<div id="cheatsheets-container">
+    <div class="nposts">
+        <h1 class="posts-heading">{{post.title}}</h1>
+        <p class="para">{{post.subtitle|truncatechars:150}}</p>
+        <div class="btn-link">
+            <a href="sheets/{{post.slug}}" type="button">Read More</a>
+        </div>
+    </div><hr>
+
+</div>
+{% endfor %}
+
+<div class="pagination-area">
+
+    <span id="previous" class="paginator">
+        {% if page_obj.has_previous %}
+        <button class="paginate-btn"><a href="?page={{page_obj.previous_page_number}}" class="paginate-btn-link">&laquo;
+                Previous</a></button>
+        {% endif %}
+
+    </span>
+    <span class="paginate-num">
+        {{page_obj.number}}
+    </span>
+
+
+    <span class="paginator" id="next">
+        {% if page_obj.has_next %}
+        <button class="paginate-btn"><a href="?page={{page_obj.next_page_number}}" class="paginate-btn-link">Next
+                &raquo;</a></button>
+        {% endif %}
+
+    </span>
+</div>
+
+{% endblock %}

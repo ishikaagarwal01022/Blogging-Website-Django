@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.contact-header-area{
+    background-color: rgb(26, 26, 92);
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2rem 0rem;
+}
+
+.contact-heading h1{
+    font-size: 3.8rem;
+    color: white;
+}
+
+
+.contact-img img{
+    width: 15vw;
+    height: 18vh;
+}
+
+
+
+#form-container{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px 20px;
+}
+
+.form-entry{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-entry label{
+    width: 10vw;
+    font-size: 1.4rem;
+    margin-left: 2rem;
+    margin-top: 2.2rem;
+    color: rgb(26, 26, 92);
+    font-weight: bold;
+
+}
+
+.form-entry input, textarea{
+    font-size: 1.3rem;
+    width: 40vw;
+    padding: 0.5rem 1.5rem;
+    margin-top: 2rem;
+    border: 3px solid rgb(26, 26, 92);
+    border-radius: 6px;
+}
+
+.sub-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#submit-btn{
+    font-size: 1.3rem;
+    padding: 0.7rem 2rem;
+    background-color: rgb(26, 26, 92);
+    color: white;
+
+}
+
+@media screen and (max-width: 895px) {
+    
+    .contact-img img{
+        width: 17vw;
+        height: 20vh;
+    }
+
+    #form-container{
+        width: 90vw;
+    }
+
+    .form-entry label{
+        width: 40vw;
+    }
+
+    .form-entry input, textarea{
+        width: 65vw;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:680px) {
+    .contact-heading h1{
+        font-size: 2.5rem;
+    }
+
+    .contact-img img{
+        width: 17vw;
+        height: 17vh;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-heading h1{
+        font-size: 1.7rem;
+    }
+
+    .contact-img img{
+        width: 23vw;
+        height: 15vh;
+    }
+    
+}
+
+@media screen and (max-width:350px) {
+    #form-container{
+        width: 100vw;
+    }
+
+    .form-entry label{
+        width: 60vw;
+        font-size: 1.1rem;
+    }
+
+    .form-entry input, textarea{
+        width: 70vw;
+        font-size: 0.9rem;
+    }
+    
+}
+
+@media screen and (max-width:1350px) {
+    #form-container{
+        width: 80vw;
+    }
+    
+    .form-entry label{
+        width: 20vw;
+    }
+}

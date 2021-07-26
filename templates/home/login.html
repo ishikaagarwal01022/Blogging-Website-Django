@@ -1,0 +1,52 @@
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chetbo | Login</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+
+<body>
+    <div class="login-container">
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+        <form action="/handlelogin" id="login-form-container" name="login-form" method="POST">
+            {% csrf_token %}
+            <div class="para-heading">Login to Chetbo</div>
+
+            <a href="{% provider_login_url 'google' %}">Login With Google</a>
+            <div class="form-grp">
+                <label for="text">Username: </label>
+                <input type="text" name="loginusername" id="loginusername">
+                {% comment %} <label for="email">Email: </label>
+                <input type="email" name="email" id="email"> {% endcomment %}
+            </div>
+
+            <div class="form-grp">
+                <label for="loginpassword">Password: </label>
+                <input type="password" name="loginpassword" id="loginpassword">
+            </div>
+            <div class="login-btn">
+
+                <button type="submit" id="login-btn">Login</button>
+            </div>
+
+            <p class="home-para">Go Back to <a href="/" class="home-link">Home</a></p>
+            <p class="home-para">New User <a href="/signup" class="home-link">Signup</a></p>
+
+        </form>
+
+    </div>
+</body>
+
+</html>

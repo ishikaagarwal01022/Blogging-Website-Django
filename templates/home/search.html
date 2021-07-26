@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}| Search Results {% endblock %}
+{% block head %}
+<link type="text/css" rel="stylesheet" href="/static/css/sheets.css"> {% endblock %}
+
+{% block body %}
+
+    <h1>Search Results: </h1>
+{% if allPosts|length < 1 %}
+<p>No Search Results found. {{query}}
+try another keyword.</p>
+{% endif %}
+    {% for post in allPosts %}
+    <div id="cheatsheets-container">
+        <div class="nposts">
+            <h1 class="posts-heading">{{post.title}}</h1>
+            <p class="para">{{post.subtitle| truncatechars:300}}</p>    
+            <div class="btn-link">
+            <a href="blog/{{post.slug}}" type="button">Read More</a></div>
+        </div> 
+        
+
+    </div>
+{% endfor %}
+
+    {% endblock %}

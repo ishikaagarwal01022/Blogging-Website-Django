@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}| Contact {% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/css/contact.css">
+<script src="/static/js/contact.js"></script>
+{% endblock %}
+
+{% block body %}
+
+<body>
+
+    <div class="contact-header-area">
+
+        <div class="contact-heading">
+            <h1>Contact</h1>
+        </div>
+        <div class="contact-img"><img src="/static/img/contactedit.png" alt=""></div>
+
+    </div>
+
+    <div id="form-container">
+        <form action="/contact" id="contact-form" method='post' name="contact-form"
+            onsubmit="return contactvalidation()">
+            {% csrf_token %}
+            <div class="form-entry">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-entry">
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email" placeholder="Enter your Email">
+            </div>
+            <div class="form-entry">
+                <label for="country">Country: </label>
+                <input type="text" name="country" id="country" placeholder="Enter your Country">
+            </div>
+            <div class="form-entry">
+                <label for="description">Description: </label>
+                <textarea name="description" id="description" cols="30" rows="10"
+                    placeholder="Your Description..."></textarea>
+            </div>
+            <div class="sub-btn">
+                <button type="submit" name="submit" id="submit-btn">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+    {% endblock %}
